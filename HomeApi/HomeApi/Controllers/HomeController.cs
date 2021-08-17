@@ -1,4 +1,6 @@
-﻿using HomeApi.Configuration;
+﻿using AutoMapper;
+using HomeApi.Configuration;
+using HomeApi.Contracts;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using System;
@@ -12,11 +14,13 @@ namespace HomeApi.Controllers
 	{
 		// Ссылка на объект конфигурации
 		private IOptions<HomeOptions> _options;
+		private IMapper _mapper;
 
 		// Инициализация конфигурации при вызове конструктора
-		public HomeController(IOptions<HomeOptions> options)
+		public HomeController(IOptions<HomeOptions> options, IMapper mapper)
 		{
 			_options = options;
+			_mapper = mapper;
 		}
 
 		/// <summary>
@@ -45,6 +49,20 @@ namespace HomeApi.Controllers
 
 			// Преобразуем результат в строку и выводим, как обычную веб-страницу
 			return StatusCode(200, pageResult.ToString());
+		}
+
+
+		/// <summary>
+		/// Метод для получения информации о доме в формате JSON
+		/// </summary>
+		[HttpGet] // Для обслуживания Get-запросов
+		[Route("infa")] // Настройка маршрута с помощью атрибутов
+		public IActionResult Infa()
+		{
+			// Получим запрос, "смапив" конфигурацию на модель запроса
+			var infoResponse = _mapper.Map<HomeOptions, InfoResponse>(_options.Value);
+			// Вернём ответ
+			return StatusCode(200, infoResponse);
 		}
 	}
 }
