@@ -21,4 +21,6 @@
       <ProjectReference Include="..\HomeApi.Data\HomeApi.Data.csproj" />
     </ItemGroup>
 
+    <ProjectExtensions><VisualStudio><UserProperties appsettings_1development_1json__JsonSchema="https://ide-integration.batect.dev/v1/configSchema.json" /></VisualStudio></ProjectExtensions>
+
 </Project>
