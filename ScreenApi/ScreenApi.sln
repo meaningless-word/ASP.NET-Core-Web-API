@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenApi", "ScreenApi\ScreenApi.csproj", "{7E11F173-E89C-456A-B857-2066A3584CB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScreenApi", "ScreenApi\ScreenApi.csproj", "{7E11F173-E89C-456A-B857-2066A3584CB7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C2C5E224-CD35-4B69-B0B2-2C99C2D456D8} = {C2C5E224-CD35-4B69-B0B2-2C99C2D456D8}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenApi.Contracts", "ScreenApi.Contracts\ScreenApi.Contracts.csproj", "{C2C5E224-CD35-4B69-B0B2-2C99C2D456D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{7E11F173-E89C-456A-B857-2066A3584CB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E11F173-E89C-456A-B857-2066A3584CB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E11F173-E89C-456A-B857-2066A3584CB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2C5E224-CD35-4B69-B0B2-2C99C2D456D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2C5E224-CD35-4B69-B0B2-2C99C2D456D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2C5E224-CD35-4B69-B0B2-2C99C2D456D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2C5E224-CD35-4B69-B0B2-2C99C2D456D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

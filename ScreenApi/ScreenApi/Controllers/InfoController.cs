@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using ScreenApi.Configuration;
+using ScreenApi.Contracts.Models;
 
 namespace ScreenApi.Controllers
 {
@@ -10,9 +10,9 @@ namespace ScreenApi.Controllers
 	public class InfoController : ControllerBase
 	{
 		private readonly ILogger<WeatherForecastController> _logger;
-		private IOptions<ScreenApiOptions> _options;
+		private IOptions<Device> _options;
 
-		public InfoController(ILogger<WeatherForecastController> logger, IOptions<ScreenApiOptions> options)
+		public InfoController(ILogger<WeatherForecastController> logger, IOptions<Device> options)
 		{
 			_logger = logger;
 			_options = options;
@@ -21,7 +21,7 @@ namespace ScreenApi.Controllers
 		[HttpGet]
 		public IActionResult Get()
 		{
-			return StatusCode(200, $"Имя сервиса: {_options.Value.ServiceName}");
+			return StatusCode(200, $"Имя сервиса: {_options.Value.Manufacturer}");
 		}
 	}
 }

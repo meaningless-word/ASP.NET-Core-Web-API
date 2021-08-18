@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using ScreenApi.Contracts.Models;
 using System.IO;
 using System.Linq;
 
@@ -39,6 +40,13 @@ namespace ScreenApi.Controllers
 
 
 			return PhysicalFile(filePath, fileType, fileName);
+		}
+
+		[HttpPost]
+		[Route("")]
+		public IActionResult Add([FromBody] Device request)
+		{
+			return StatusCode(200, request.StorageType.ToString());
 		}
 	}
 }

@@ -1,4 +1,4 @@
-﻿namespace ScreenApi.Configuration
+﻿namespace ScreenApi.Contracts.Models
 {
 	public enum StorageType
 	{
